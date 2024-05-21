@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ArtistDiscography/static/css/main.8e54d3c8.css",
+    "main.js": "/ArtistDiscography/static/js/main.38e19028.js",
+    "static/js/453.f2dba251.chunk.js": "/ArtistDiscography/static/js/453.f2dba251.chunk.js",
+    "index.html": "/ArtistDiscography/index.html",
+    "main.8e54d3c8.css.map": "/ArtistDiscography/static/css/main.8e54d3c8.css.map",
+    "main.38e19028.js.map": "/ArtistDiscography/static/js/main.38e19028.js.map",
+    "453.f2dba251.chunk.js.map": "/ArtistDiscography/static/js/453.f2dba251.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8e54d3c8.css",
+    "static/js/main.38e19028.js"
+  ]
+}
