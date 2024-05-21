@@ -1,0 +1,40 @@
+/* components/AlbumCard.css */
+.album-title {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .album-img {
+    padding: 1rem;
+    background-color: lightgray;
+    border-radius: 5%;
+  }
+  
+  @media (min-width: 576px) {
+    /* Small devices (landscape phones) */
+    .album-title {
+      font-size: 1rem; /* Adjust font size for small devices */
+    }
+  }
+  
+  @media (min-width: 768px) {
+    /* Medium devices (tablets) */
+    .album-title {
+      font-size: 1.2rem; /* Adjust font size for tablets */
+    }
+  }
+  
+  @media (min-width: 992px) {
+    /* Large devices (desktops) */
+    .album-title {
+      font-size: 1.2rem; /* Adjust font size for desktops */
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    /* Extra large devices (large desktops) */
+    .album-title {
+      font-size: 1.5rem; /* Adjust font size for large desktops */
+    }
+  }
+  
