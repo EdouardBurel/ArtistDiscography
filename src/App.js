@@ -78,7 +78,7 @@ function App() {
       <SearchForm onSearch={search} setSearchInput={setSearchInput} />
       <Container>
         {artistImage && (
-          <Row className="justify-content-center my-5">
+          <Row className="bandInfo">
             {/* Artist Image */}
             <div className="col-md-4">
               {artistImage && (

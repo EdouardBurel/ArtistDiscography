@@ -1,4 +1,8 @@
 /* components/AlbumCard.css */
+
+.album-card {
+  padding: 1rem;
+}
 .album-title {
     font-size: 18px;
     text-align: center;
@@ -8,6 +12,8 @@
     padding: 1rem;
     background-color: lightgray;
     border-radius: 5%;
+    box-shadow: 0 2px 8px rgba(2, 16, 0, 1)
+    
   }
   
   @media (min-width: 576px) {

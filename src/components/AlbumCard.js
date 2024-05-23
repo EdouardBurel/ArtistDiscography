@@ -6,7 +6,7 @@ function AlbumCard({ album }) {
   const releaseYear = album.release_date.split("-")[0];
 
   return (
-    <Card>
+    <Card className="album-card">
       <Card.Img className="album-img" src={album.images[0].url} />
       <Card.Body>
         <Card.Title className="album-title">{album.name}</Card.Title>
