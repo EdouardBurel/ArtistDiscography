@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row } from "react-bootstrap";
 import SearchForm from "./components/SearchForm";
@@ -16,15 +16,11 @@ function App() {
   const [accessToken, setAccessToken] = useState("");
   const [albums, setAlbums] = useState([]);
   const [artistName, setArtistName] = useState("");
-  const [artistGenre, setartistGenre] = useState("");
+  const [artistGenre, setArtistGenre] = useState("");
   const [artistImage, setArtistImage] = useState("");
   const [columns, setColumns] = useState(4);
 
-  useEffect(() => {
-    fetchAccessToken().then((token) => setAccessToken(token));
-  }, []);
-
-  async function search() {
+  const search = useCallback(async () => {
     console.log("Search for " + searchInput);
 
     const artistID = await searchArtist(searchInput, accessToken);
@@ -34,12 +30,30 @@ function App() {
     console.log("Artist details:", artistDetails);
     setArtistImage(artistDetails.images[0].url);
     setArtistName(artistDetails.name);
-    setartistGenre(artistDetails.genres)
+    setArtistGenre(artistDetails.genres);
 
     const albumsData = await fetchAlbums(artistID, accessToken);
     console.log(albumsData);
-    setAlbums(albumsData);
-  }
+
+    // Remove duplicates from album names
+    const seenAlbumNames = new Set();
+    const uniqueAlbums = albumsData.filter((album) => {
+      const albumNamePrefix = album.name.substring(0, 10).toLowerCase();
+      if (!seenAlbumNames.has(albumNamePrefix)) {
+        seenAlbumNames.add(albumNamePrefix);
+        return true;
+      }
+      return false;
+    });
+
+    console.log(uniqueAlbums);
+
+    setAlbums(uniqueAlbums);
+  }, [searchInput, accessToken]);
+
+  useEffect(() => {
+    fetchAccessToken().then((token) => setAccessToken(token));
+  }, []);
 
   useEffect(() => {
     function handleResize() {
@@ -71,7 +85,7 @@ function App() {
     return () => {
       document.removeEventListener("keypress", handleKeyPress);
     };
-  }, [searchInput, accessToken]);
+  }, [search]);
 
   return (
     <div className="App">
@@ -85,7 +99,12 @@ function App() {
                 <img
                   src={artistImage}
                   alt="Artist"
-                  style={{ maxWidth: "70%", width:"100%", height:"auto", borderRadius: "5%" }}
+                  style={{
+                    maxWidth: "70%",
+                    width: "100%",
+                    height: "auto",
+                    borderRadius: "5%",
+                  }}
                 />
               )}
             </div>
@@ -94,7 +113,7 @@ function App() {
               {/* Display artist information */}
               <div>
                 <h2>{artistName}</h2>
-                <h3>{artistGenre.slice(0,4).join(" / ")}</h3>
+                <h3>{artistGenre.slice(0, 4).join(" / ")}</h3>
               </div>
             </div>
           </Row>

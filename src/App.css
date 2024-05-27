@@ -2,7 +2,11 @@
   text-align: center;
   background-color: #fee440;
   padding: 20px;
-  height: 100vh;
+  height: 100%;
+}
+
+.App.expanded {
+  height: 100%;
 }
 
 .App-logo {
