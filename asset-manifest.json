@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/ArtistDiscography/static/css/main.8f961511.css",
-    "main.js": "/ArtistDiscography/static/js/main.879c29db.js",
+    "main.css": "/ArtistDiscography/static/css/main.4e1d69c3.css",
+    "main.js": "/ArtistDiscography/static/js/main.45164e33.js",
     "static/js/453.f2dba251.chunk.js": "/ArtistDiscography/static/js/453.f2dba251.chunk.js",
     "index.html": "/ArtistDiscography/index.html",
-    "main.8f961511.css.map": "/ArtistDiscography/static/css/main.8f961511.css.map",
-    "main.879c29db.js.map": "/ArtistDiscography/static/js/main.879c29db.js.map",
+    "main.4e1d69c3.css.map": "/ArtistDiscography/static/css/main.4e1d69c3.css.map",
+    "main.45164e33.js.map": "/ArtistDiscography/static/js/main.45164e33.js.map",
     "453.f2dba251.chunk.js.map": "/ArtistDiscography/static/js/453.f2dba251.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8f961511.css",
-    "static/js/main.879c29db.js"
+    "static/css/main.4e1d69c3.css",
+    "static/js/main.45164e33.js"
   ]
 }
